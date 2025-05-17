@@ -1,5 +1,9 @@
+import {useState} from "react";
+
 function App() {
-    
+
+    const [city, setCity] = useState<string>('');
+
     const fetchWeather = () => {
         const city = 'Cambrils'
         const apiKey = '6f13654c9cb5013bcd6146847d6a1d99'
