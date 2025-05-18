@@ -1,10 +1,11 @@
 import {useState} from "react";
+import {Weather} from "./Weather.tsx";
 
 function App() {
 
     const [city, setCity] = useState<string>('');  // TODO [покажи, положи]
-        const [error, setError] = useState<null | string>(null);
-        const [weather, setWeather] = useState<{temp: number, description: string} | null>(null);
+    const [error, setError] = useState<null | string>(null);
+    const [weather, setWeather] = useState<{ temp: number, description: string } | null>(null);
     console.log(weather);
 
     const fetchWeather = () => {
@@ -29,13 +30,19 @@ function App() {
     }
 
 
-
     return (
         <div className="App">
-            <h1>Weather App</h1>
-            <input type="search" onChange={(e) => setCity(e.currentTarget.value)} />
-            <button onClick={fetchWeather}>Get weather</button>
-            {error && <p style={{color: 'red'}}>{error}</p>}  {/* TODO отображаем ошибку*/}
+            <h1>Current weather</h1>
+            <div className='container'>
+                <div className='cityWrapper'>
+                    <input type="search" placeholder='Enter your location' onChange={(e) => setCity(e.currentTarget.value)}/>
+                    <button onClick={fetchWeather}>Get weather</button>
+                </div>
+                <div className='weatherWrapper'>
+                    {weather && <Weather temp={weather.temp} description={weather.description}/>}
+                    {error && <p style={{color: 'red'}}>{error}</p>} {/* TODO отображаем ошибку*/}
+                </div>
+            </div>
         </div>
     )
 }
