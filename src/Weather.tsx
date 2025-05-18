@@ -9,11 +9,14 @@ type WeatherType = {
 
 
 export const Weather = ({temp, description, humidity, icon}: WeatherType) => {
+    const iconUrl = `https://openweathermap.org/img/wn/${icon}@2x.png`;
+
     return (
         <div className='weather'>
-            <p>Temperature: {temp}</p>
+            <p>Temperature: {temp} °C</p>
             <p>Humidity: {humidity} %</p>
-            <p>Weather: {description} <img src={icon} alt="img"/></p>
+            <img src={iconUrl} alt={description}/>
+            <p>Weather: {description}</p>
         </div>
     );
 };
