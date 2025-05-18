@@ -27,7 +27,7 @@ body {
 }
 
 h1 {
-  margin: 50px;
+  margin-right: 50px;
   color: var(--titleColor);
   font-weight: 900;
   font-size: 3.5em;
@@ -70,15 +70,11 @@ input::placeholder {
   color:  var(--btnColor);
 }
 
-input:hover {
-  border: 1px solid var(--btnColor);
-  transition: all 0.3s ease;
-}
-
 button {
-  padding: 10px;
+  padding: 10px 20px;
   background-color: var(--btnColor);
   color: var(--btnText);
+  border: 1px solid var(--btnText);
 }
 
 button:hover {
@@ -94,6 +90,11 @@ button:hover {
   text-align: center;
   background-color: var(--displayColor);
   color: var(--textColor);
+}
+
+.tempWrapper {
+  display: flex;
+  justify-content: space-evenly;
 }
 
 .error {
