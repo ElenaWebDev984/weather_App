@@ -5,7 +5,7 @@ function App() {
 
     const [city, setCity] = useState<string>('');  // TODO [покажи, положи]
     const [error, setError] = useState<null | string>(null);
-    const [weather, setWeather] = useState<{ temp: number, description: string } | null>(null);
+    const [weather, setWeather] = useState<{ temp: number, humidity: string, description: string, icon: string } | null>(null);
     console.log(weather);
 
     const fetchWeather = () => {
@@ -18,6 +18,8 @@ function App() {
                 } else {
                     setWeather({
                         temp: json.main.temp,
+                        icon: json.weather[0].icon,
+                        humidity: json.main.humidity,
                         description: json.weather[0].description,
                     });
                     setError(null);  // TODO Сбрасываем ошибку, если запрос успешен
@@ -39,7 +41,7 @@ function App() {
                     <button onClick={fetchWeather}>Get weather</button>
                 </div>
                 <div className='weatherWrapper'>
-                    {weather && <Weather temp={weather.temp} description={weather.description}/>}
+                    {weather && <Weather temp={weather.temp} humidity={weather.humidity} description={weather.description} icon={weather.icon}/>}
                     {error && <p style={{color: 'red'}}>{error}</p>} {/* TODO отображаем ошибку*/}
                 </div>
             </div>
