@@ -2,8 +2,90 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
+
+  --bgc: #2c2c2c;
+  --titleColor: #198282;
+  --btnColor: #1b8a8a;
+  --btnHover: #25c2c2;
+  --displayColor: #ffeb3b;
+  --textColor: #000;
 }
 
 body {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  font-size: 20px;
+  text-align: center;
+  background-color: var(--bgc);
+  min-height: 100vh;
+  font-weight: bold;
+}
+
+h1 {
+  margin: 50px;
+  color: var(--titleColor);
+  font-weight: 900;
+  font-size: 70px;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  padding: 20px;
+}
+
+.cityWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+input, button {
+  border: none;
+  border-radius: 4px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  margin-right: 10px;
+  flex-grow: 1;
+}
+
+input::placeholder {
+  color:  var(--btnColor);
+}
+
+input:hover {
+  border: 1px solid var(--btnColor);
+}
+
+button {
+  padding: 10px;
+  background-color: var(--btnColor);
+}
+
+button:hover {
+  background-color: var(--btnHover);
+}
+
+.weatherWrapper {
+  width: 100%;
+  border-radius: 8px;
+  display: inline-block;
+  text-align: center;
+  background-color: var(--displayColor);
+  color: var(--textColor);
 }
