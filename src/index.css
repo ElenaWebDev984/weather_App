@@ -64,10 +64,12 @@ input {
   padding: 10px;
   margin-right: 10px;
   flex-grow: 1;
+  color: var(--textColor);
 }
 
 input::placeholder {
-  color:  var(--btnColor);
+  color: var(--btnColor);
+  opacity: 0.7;
 }
 
 button {
@@ -75,6 +77,7 @@ button {
   background-color: var(--btnColor);
   color: var(--btnText);
   border: 1px solid var(--btnText);
+  transition: background-color 0.3s;
 }
 
 button:hover {
@@ -100,4 +103,51 @@ button:hover {
 .error {
   color: var(--errorColor);
   font-size: 2rem;
+}
+
+/* Мобильная версия */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.5em;
+    margin-right: 0;
+    padding-top: 30px;
+  }
+
+  .container {
+    gap: 30px;
+    padding: 15px;
+  }
+
+  .cityWrapper {
+    flex-direction: column;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  input {
+    margin-right: 0;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  button {
+    width: 50%;
+    margin: 0 auto;
+  }
+
+  .error {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+    padding-top: 20px;
+  }
+
+  .App {
+    font-size: 1rem;
+  }
 }
